@@ -60,7 +60,6 @@ For example, so long as the majority of users work in L-BTC units, values should
 
 === Simpler syntax ===
 
-[foo] means optional, <bar> are placeholders 
  <nowiki>tdex:<provider_url>[?amount_p=<amount>][?asset_p=<asset_p>][?amount_r=<amount_r>][?asset_r=<asset_r>]</nowiki>
 
 === Examples ===
