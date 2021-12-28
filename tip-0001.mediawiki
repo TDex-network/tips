@@ -1,8 +1,8 @@
 <pre>
-  BIP: 21
+  TIP: 1
   Layer: Applications
   Title: URI Scheme
-  Author: Marco Argentieri <argentieri.ma+tip21@gmail.com>
+  Author: Marco Argentieri <argentieri.ma+tip1@gmail.com>
   Comments-Summary: No comments yet.
   Comments-URI: https://github.com/tdex-network/tips/wiki/Comments:TIP-0001
   Status: Draft
