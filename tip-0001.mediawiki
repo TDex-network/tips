@@ -1,0 +1,83 @@
+<pre>
+  BIP: 21
+  Layer: Applications
+  Title: URI Scheme
+  Author: Marco Argentieri <argentieri.ma+tip21@gmail.com>
+  Comments-Summary: No comments yet.
+  Comments-URI: https://github.com/tdex-network/tips/wiki/Comments:TIP-0001
+  Status: Draft
+  Type: Standards Track
+  Created: 2021-12-28
+</pre>
+
+
+==Abstract==
+This TIP proposes a URI scheme for making TDEX trades against a liquidity provider.
+
+==Motivation==
+The purpose of this URI scheme is to enable users to easily make trades by simply clicking links on webpages or scanning QR Codes.
+
+==Specification==
+
+
+TDEX clients MUST NOT act on URIs without getting the user's authorization.
+They SHOULD require the user to manually approve each trade individually, though in some cases they MAY allow the user to automatically make this decision.
+
+=== Operating system integration ===
+Graphical TDEX clients SHOULD register themselves as the handler for the "tdex:" URI scheme by default, if no other handler is already registered. If there is already a registered handler, they MAY prompt the user to change it once when they first run the client.
+
+=== General Format ===
+
+TDEX URIs follow the general format for URIs as set forth in RFC 3986. The path component consists of a subset of `SwapRequest`'s fields as defined in [BOTD #3: Swap protocol](https://github.com/tdex-network/tdex-specs/blob/master/03-swap-protocol.md) encoded as query string.
+
+Elements of the query component may contain characters outside the valid range. These must first be encoded according to UTF-8, and then each octet of the corresponding UTF-8 sequence must be percent-encoded as described in RFC 3986.
+
+The scheme component ("tdex:") is case-insensitive, and implementations must accept any combination of uppercase and lowercase letters. The rest of the URI is case-sensitive, including the query parameter keys.
+
+=== Query Keys ===
+
+*provider_url: The liquidity provider URL to connect to
+
+*amount_p: The proposer's quantity
+*asset_p: The proposer's asset hash
+
+AND/OR
+
+*amount_r: The responder's quantity
+*asset_r: The responder's asset hash
+
+
+==== Transfer amount ====
+
+If an amount is provided, it MUST be specified in decimal L-BTC.
+All amounts MUST contain no commas and use a period (.) as the separating character to separate whole numbers and decimal fractions.
+I.e. amount=50.00 or amount=50 is treated as 50 L-BTC, and amount=50,000.00 is invalid.
+
+TDEX clients MAY display the amount in any format that is not intended to deceive the user.
+They SHOULD choose a format that is foremost least confusing, and only after that most reasonable given the amount requested.
+For example, so long as the majority of users work in L-BTC units, values should always be displayed in L-BTC by default, even if L-mBTC or L-bits would otherwise be a more logical interpretation of the amount.
+
+
+=== Simpler syntax ===
+
+[foo] means optional, <bar> are placeholders 
+ <nowiki>tdex:<provider_url>[?amount_p=<amount>][?asset_p=<asset_p>][?amount_r=<amount_r>][?asset_r=<asset_r>]</nowiki>
+
+=== Examples ===
+
+Just the provider:
+ tdex:https://provider.tdex.network:9945
+
+Provider with proposer amount and asset:
+ tdex:https://provider.tdex.network:9945?amount_p=0.005&asset_p=6f0279e9ed041c3d710a9f57d0c02928416460c4b722ae3457a11eec381c526d 
+
+Provider with proposer amount for asset AND responder amount for asset:
+ tdex:https://provider.tdex.network:9945?amount_p=0.005&asset_p=6f0279e9ed041c3d710a9f57d0c02928416460c4b722ae3457a11eec381c526d&amount_r=1500&asset_r=ce091c998b83c78bb71a632313ba3760f1763d9cfcffae02258ffa9865a37bd2
+
+Characters must be URI encoded properly.
+
+== Reference Implementations ==
+TBD
+
+=== Libraries ===
+TBD
