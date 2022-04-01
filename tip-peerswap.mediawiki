@@ -1,0 +1,32 @@
+<pre>
+  TIP: ?
+  Layer: Applications
+  Title: Integrate Peer Swap
+  Author: Marco Argentieri <argentieri.ma+tip1@gmail.com>
+  Comments-Summary: No comments yet.
+  Comments-URI: https://github.com/tdex-network/tips/wiki/Comments:<?>
+  Status: Draft
+  Type: Standards Track
+  Created: 2021-04-01
+</pre>
+
+
+==Abstract==
+This TIP proposes to integrate [[https://github.com/sputn1ck/peerswap|PeerSwap]] protocol in trader clients to make submarine swaps between Liquid and Lightning Network.
+
+==Motivation==
+The purpose of this integration is to simplify the onboarding/offboarding to/from Liquid Network, with a faster deposit method compared to a Bitcoin pegin which takes 102 blocks to complete.
+
+==Specification==
+
+TBD 
+
+=== Operating system integration ===
+
+TBD
+
+== Reference Implementations ==
+TBD
+
+=== Libraries ===
+TBD
