@@ -12,7 +12,7 @@
 
 
 ==Abstract==
-This TIP proposes to integrate [PeerSwap](https://github.com/sputn1ck/peerswap) protocol in trader clients to make submarine swaps between Liquid and Lightning Network.
+This TIP proposes to integrate [[https://github.com/sputn1ck/peerswap|PeerSwap]] protocol in trader clients to make submarine swaps between Liquid and Lightning Network.
 
 ==Motivation==
 The purpose of this integration is to simplify the onboarding/offboarding to/from Liquid Network, with a faster deposit method compared to a Bitcoin pegin which takes 102 blocks to complete.
