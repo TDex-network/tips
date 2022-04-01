@@ -28,7 +28,7 @@ Graphical TDEX clients SHOULD register themselves as the handler for the "tdex:"
 
 === General Format ===
 
-TDEX URIs follow the general format for URIs as set forth in RFC 3986. The path component consists of a subset of `SwapRequest`'s fields as defined in [BOTD #3: Swap protocol](https://github.com/tdex-network/tdex-specs/blob/master/03-swap-protocol.md) encoded as query string.
+TDEX URIs follow the general format for URIs as set forth in RFC 3986. The path component consists of a subset of `SwapRequest`'s fields as defined in [[https://github.com/tdex-network/tdex-specs/blob/master/03-swap-protocol.md|BOTD #3: Swap protocol]] encoded as query string.
 
 Elements of the query component may contain characters outside the valid range. These must first be encoded according to UTF-8, and then each octet of the corresponding UTF-8 sequence must be percent-encoded as described in RFC 3986.
 
